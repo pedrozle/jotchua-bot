@@ -1,0 +1,45 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "Pedrozle",
+      "name": "João Pedro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61695553?v=4",
+      "profile": "http://pedrozle.github.io",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "carlosdoceu",
+      "name": "Carlos Omar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61975418?v=4",
+      "profile": "https://github.com/carlosdoceu",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Daniel9D",
+      "name": "Daniel costa martins",
+      "avatar_url": "https://avatars.githubusercontent.com/u/89415617?v=4",
+      "profile": "https://github.com/Daniel9D",
+      "contributions": [
+        "code",
+        "data"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "Jotchua---Bot",
+  "projectOwner": "Pedrozle"
+}
