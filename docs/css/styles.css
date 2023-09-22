@@ -1,0 +1,30 @@
+header {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 80vw;
+    padding: 10px;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navlinks{
+    display: flex;
+}
+
+.links{
+    margin-right: 10px;
+}
+
+footer {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
