@@ -1,3 +1,0 @@
-discord
-python-dotenv
-pymongo
