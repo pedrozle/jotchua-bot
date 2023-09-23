@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Inder&display=swap");
+
+body {
+    font-family: "Inder", sans-serif;
+}
+
+header {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+}
+
+nav {
+    width: 80vw;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navlinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links {
+    margin-right: 10px;
+    text-decoration: none;
+    transition: 0.7s;
+    padding: 10px;
+}
+
+.links:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.wip{
+    background-image: url("./../assets/development.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner{
+
+}
+
+.banner-container{
+    height: 25vw;
+}
+
+.comandos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    font-size: 1.3em;
+    font-weight: bold;
+    text-decoration: overline;
+    margin-bottom: 10px;
+}
+
+.accordion{
+    min-width: 50vw;
+    margin-bottom: 10px;
+}
+
+.item{
+    margin-bottom: 10px;
+}
+
+.comandos-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.comandos-content p{
+    max-width: 30vw;
+}
+
+
+.badge{
+    margin-left: 30px;
+}
+
+small{
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+footer {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+    flex-direction: column;
+}

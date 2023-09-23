@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jotchua - Bot</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="./css/styles.css" type="text/css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a class="logo links" href="/">Jotchua</a>
+                <ul class="navlinks">
+                    <a
+                        class="links"
+                        href=" https://discord.com/api/oauth2/authorize?client_id=1030981696528584795&permissions=0&scope=bot"
+                        target="_blank"
+                        >adicionar</a
+                    >
+                    <a class="links" href="#comandos">comandos</a>
+                    <a class="links" href="#sobre">sobre</a>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="banner wip">
+                <div class="banner-container"></div>
+            </section>
+            <section id="comandos" class="comandos">
+                <p class="titulo">Lista de Comandos</p>
+                <div class="comandos-container">
+                    <!-- COMANDOS BASICOS -->
+                    <div class="accordion" id="accordionBasic">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button
+                                    class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseBasic"
+                                    aria-expanded="true"
+                                    aria-controls="collapseBasic"
+                                >
+                                    Comandos Básicos
+                                </button>
+                            </h2>
+                            <div
+                                id="collapseBasic"
+                                class="accordion-collapse collapse"
+                                data-bs-parent="#accordionBasic"
+                            >
+                                <div class="accordion-body">
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseBasic0"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseBasic0"
+                                                >
+                                                    Nível do usuário
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseBasic0"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code>
+                                                            rank ou rank
+                                                            &lt;nome | apelido |
+                                                            id&gt;
+                                                        </code>
+                                                        <p>
+                                                            Exibe o nível do
+                                                            usuário no servidor.
+                                                            Ao chamar o comando
+                                                            simples
+                                                            <code>rank</code>
+                                                            exibe o seu nível no
+                                                            servidor, caso
+                                                            contrário exibe o
+                                                            nível do usuário
+                                                            informado.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseBasic1"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseBasic1"
+                                                >
+                                                    Listar membros
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseBasic1"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code>membros</code>
+                                                        <p>
+                                                            Exibe uma lista de
+                                                            todos os membros
+                                                            neste servidor
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseBasic2"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseBasic2"
+                                                >
+                                                    Informação sobre um usuário
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseBasic2"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code
+                                                            >info &lt;nada ou
+                                                            apelido &gt;
+                                                        </code>
+                                                        <p>
+                                                            Exibe informações
+                                                            sobre você (caso não
+                                                            envie nenhum
+                                                            apelido) ou sobre um
+                                                            usuário com aquele
+                                                            (apelido/nome/id)
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseBasic3"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseBasic3"
+                                                >
+                                                    Repetir uma mensagem
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseBasic3"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code>
+                                                            repetir &lt;nro de
+                                                            vezes&gt;
+                                                            &lt;mensagem&gt;
+                                                        </code>
+                                                        <p>
+                                                            Repete a mensagem o
+                                                            número de vezes
+                                                            especificado e
+                                                            informa quem disse
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseBasic4"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseBasic4"
+                                                >
+                                                    Jotchua Decide
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseBasic4"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code>
+                                                            decida arg_1 ou
+                                                            arg_2 ou ... arg_n
+                                                        </code>
+                                                        <p>
+                                                            Escolhe para você um
+                                                            dos dois argumentos
+                                                            que foram passados
+                                                            para ele (pode
+                                                            passar mais de 2
+                                                            argumentos)
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseBasic5"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseBasic5"
+                                                >
+                                                    Lançar um dado
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseBasic5"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code>
+                                                            dado
+                                                            &lt;x&gt;d&lt;X&gt;
+                                                        </code>
+                                                        <p>
+                                                            O Jotchua lança um
+                                                            dado dX, x vezes e
+                                                            retorna cada
+                                                            resultado.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RP -->
+                    <div class="accordion position-relative" id="accordionRP">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button
+                                    class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseRP"
+                                    aria-expanded="true"
+                                    aria-controls="collapseRP"
+                                >
+                                    <span class="position-relative"
+                                        >Role Play
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info"
+                                            >beta</span
+                                        ></span
+                                    >
+                                </button>
+                            </h2>
+                            <div
+                                id="collapseRP"
+                                class="accordion-collapse collapse"
+                                data-bs-parent="#accordionRP"
+                            >
+                                <div class="accordion-body">
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseRP1"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseRP1"
+                                                >
+                                                    <span
+                                                        class="position-relative"
+                                                        >Placar Monetário
+                                                        <span
+                                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                                            >soon</span
+                                                        ></span
+                                                    >
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseRP1"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code>placar</code>
+                                                        <p>
+                                                            Exibe uma lista de
+                                                            todos os usuários no
+                                                            servidor e exibe o
+                                                            saldo total deles,
+                                                            ranqueados pelo
+                                                            saldo.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseRP2"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseRP2"
+                                                >
+                                                    <span
+                                                        class="position-relative"
+                                                        >Saldo
+                                                        <span
+                                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                                            >soon</span
+                                                        ></span
+                                                    >
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseRP2"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code>saldo </code>
+                                                        <p>
+                                                            Exibe o seu saldo
+                                                            atual! Quanto você
+                                                            tem na mão e quanto
+                                                            tem no banco.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseRP3"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseRP3"
+                                                >
+                                                    <span
+                                                        class="position-relative"
+                                                        >Trabalhar
+                                                        <span
+                                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                                            >soon</span
+                                                        ></span
+                                                    >
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseRP3"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code> trabalhar </code>
+                                                        <p>
+                                                            Você sai a trabalho
+                                                            e recebe um salário.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseRP5"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseRP5"
+                                                >
+                                                    <span
+                                                        class="position-relative"
+                                                        >Roubar
+                                                        <span
+                                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                                            >soon</span
+                                                        ></span
+                                                    >
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseRP5"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code>
+                                                            roubar &lt;nome |
+                                                            apelido | id&gt;
+                                                        </code>
+                                                        <p>
+                                                            Você rouba um valor
+                                                            aleatório do membro.
+                                                            <small
+                                                                >cuidado com a
+                                                                polícia
+                                                                👮</small
+                                                            >
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social -->
+                    <div
+                        class="accordion position-relative"
+                        id="accordionSocial"
+                    >
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button
+                                    class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSocial"
+                                    aria-expanded="true"
+                                    aria-controls="collapseSocial"
+                                >
+                                    <span class="position-relative"
+                                        >Social
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info"
+                                            >beta</span
+                                        ></span
+                                    >
+                                </button>
+                            </h2>
+                            <div
+                                id="collapseSocial"
+                                class="accordion-collapse collapse"
+                                data-bs-parent="#accordionSocial"
+                            >
+                                <div class="accordion-body">
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseSocial1"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseSocial1"
+                                                >
+                                                    <span
+                                                        class="position-relative"
+                                                        >Bater em alguém
+                                                        <span
+                                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                                            >soon</span
+                                                        ></span
+                                                    >
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseSocial1"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code
+                                                            >tapa &lt;nome |
+                                                            apelido |
+                                                            id&gt;</code
+                                                        >
+                                                        <p>
+                                                            Você dá um tapa no
+                                                            usuário. O tapa
+                                                            possui um nível de
+                                                            dor.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ITEM -->
+                                    <div
+                                        class="accordion item"
+                                        id="accordionFilho"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseSocial2"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseSocial2"
+                                                >
+                                                    <span
+                                                        class="position-relative"
+                                                        >Abraçar alguém
+                                                        <span
+                                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                                            >soon</span
+                                                        ></span
+                                                    >
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseSocial2"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFilho"
+                                            >
+                                                <div class="accordion-body">
+                                                    <div
+                                                        class="comandos-content"
+                                                    >
+                                                        <code
+                                                            >abraca &lt;nome |
+                                                            apelido | id&gt;
+                                                        </code>
+                                                        <p>
+                                                            Você abraça o
+                                                            usuário, que fofo!
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Jotchua &copy; 2022</p>
+            <div class="made-by">
+                Made by <a href="https://github.com/pedrozle">Pedrozle</a>
+            </div>
+        </footer>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
