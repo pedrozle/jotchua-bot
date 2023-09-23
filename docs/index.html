@@ -19,18 +19,52 @@
     </head>
     <body>
         <header>
-            <nav>
-                <a class="logo links" href="/">Jotchua</a>
-                <ul class="navlinks">
-                    <a
-                        class="links"
-                        href=" https://discord.com/api/oauth2/authorize?client_id=1030981696528584795&permissions=0&scope=bot"
-                        target="_blank"
-                        >adicionar</a
+            <nav class="navbar navbar-expand-lg bs-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Jotchua</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
                     >
-                    <a class="links" href="#comandos">comandos</a>
-                    <a class="links" href="#sobre">sobre</a>
-                </ul>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarSupportedContent"
+                    >
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    aria-current="page"
+                                    href="https://discord.com/api/oauth2/authorize?client_id=1030981696528584795&permissions=0&scope=bot"
+                                    target="_blank"
+                                    >adicionar</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#comandos"
+                                    >comandos</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sobre">sobre</a>
+                            </li>
+                        </ul>
+                        <a
+                            class="btn btn-light"
+                            href="https://discord.com/api/oauth2/authorize?client_id=1030981696528584795&permissions=0&scope=bot"
+                            target="_blank"
+                        >
+                            Adicione Jotchua ao seu servidor!
+                        </a>
+                    </div>
+                </div>
             </nav>
         </header>
         <main>
@@ -40,25 +74,71 @@
             <section id="comandos" class="comandos">
                 <p class="titulo">Lista de Comandos</p>
                 <div class="comandos-container">
-                    <!-- COMANDOS BASICOS -->
-                    <div class="accordion" id="accordionBasic">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button
-                                    class="accordion-button"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapseBasic"
-                                    aria-expanded="true"
-                                    aria-controls="collapseBasic"
+                    <!-- Tabslist -->
+                    <div class="d-flex align-items-start">
+                        <div
+                            class="nav flex-column nav-pills me-3"
+                            id="v-pills-tab"
+                            role="tablist"
+                            aria-orientation="vertical"
+                        >
+                            <button
+                                class="nav-link active"
+                                id="v-pills-basic-tab"
+                                data-bs-toggle="pill"
+                                data-bs-target="#v-pills-basic"
+                                type="button"
+                                role="tab"
+                                aria-controls="v-pills-basic"
+                                aria-selected="true"
+                            >
+                                Comandos Básicos
+                            </button>
+                            <button
+                                class="nav-link"
+                                id="v-pills-rp-tab"
+                                data-bs-toggle="pill"
+                                data-bs-target="#v-pills-rp"
+                                type="button"
+                                role="tab"
+                                aria-controls="v-pills-rp"
+                                aria-selected="false"
+                            >
+                                <span class="position-relative"
+                                    >Role Play
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info"
+                                        >beta</span
+                                    ></span
                                 >
-                                    Comandos Básicos
-                                </button>
-                            </h2>
+                            </button>
+                            <button
+                                class="nav-link"
+                                id="v-pills-social-tab"
+                                data-bs-toggle="pill"
+                                data-bs-target="#v-pills-social"
+                                type="button"
+                                role="tab"
+                                aria-controls="v-pills-social"
+                                aria-selected="false"
+                            >
+                                <span class="position-relative"
+                                    >Social
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info"
+                                        >beta</span
+                                    ></span
+                                >
+                            </button>
+                        </div>
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <!-- Comandos basicos -->
                             <div
-                                id="collapseBasic"
-                                class="accordion-collapse collapse"
-                                data-bs-parent="#accordionBasic"
+                                class="tab-pane fade show active"
+                                id="v-pills-basic"
+                                role="tabpanel"
+                                aria-labelledby="v-pills-basic-tab"
+                                tabindex="0"
                             >
                                 <div class="accordion-body">
                                     <!-- ITEM -->
@@ -69,7 +149,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseBasic0"
@@ -119,7 +199,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseBasic1"
@@ -158,7 +238,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseBasic2"
@@ -203,7 +283,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseBasic3"
@@ -247,7 +327,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseBasic4"
@@ -292,7 +372,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseBasic5"
@@ -328,34 +408,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- RP -->
-                    <div class="accordion position-relative" id="accordionRP">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button
-                                    class="accordion-button"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapseRP"
-                                    aria-expanded="true"
-                                    aria-controls="collapseRP"
-                                >
-                                    <span class="position-relative"
-                                        >Role Play
-                                        <span
-                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info"
-                                            >beta</span
-                                        ></span
-                                    >
-                                </button>
-                            </h2>
+                            <!-- RP -->
                             <div
-                                id="collapseRP"
-                                class="accordion-collapse collapse"
-                                data-bs-parent="#accordionRP"
+                                class="tab-pane fade"
+                                id="v-pills-rp"
+                                role="tabpanel"
+                                aria-labelledby="v-pills-rp-tab"
+                                tabindex="0"
                             >
                                 <div class="accordion-body">
                                     <!-- ITEM -->
@@ -366,7 +426,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseRP1"
@@ -415,7 +475,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseRP2"
@@ -462,7 +522,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseRP3"
@@ -507,7 +567,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseRP5"
@@ -553,37 +613,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- Social -->
-                    <div
-                        class="accordion position-relative"
-                        id="accordionSocial"
-                    >
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button
-                                    class="accordion-button"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapseSocial"
-                                    aria-expanded="true"
-                                    aria-controls="collapseSocial"
-                                >
-                                    <span class="position-relative"
-                                        >Social
-                                        <span
-                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info"
-                                            >beta</span
-                                        ></span
-                                    >
-                                </button>
-                            </h2>
+                            <!-- Social -->
                             <div
-                                id="collapseSocial"
-                                class="accordion-collapse collapse"
-                                data-bs-parent="#accordionSocial"
+                                class="tab-pane fade"
+                                id="v-pills-social"
+                                role="tabpanel"
+                                aria-labelledby="v-pills-social-tab"
+                                tabindex="0"
                             >
                                 <div class="accordion-body">
                                     <!-- ITEM -->
@@ -594,7 +631,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseSocial1"
@@ -645,7 +682,7 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button"
+                                                    class="my-accordion-button"
                                                     type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapseSocial2"
@@ -684,13 +721,14 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
+            <section id="about" class="sobre">
+                <p class="titulo">Equipe por trás do Jotchua</p>
             </section>
         </main>
         <footer>
