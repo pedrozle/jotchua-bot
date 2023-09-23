@@ -5,18 +5,21 @@ body {
 }
 
 header {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #eeeeee;
+    background-color: #5865F2;
 }
 
 nav {
+    background-color: #5865F2;
     width: 80vw;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
+    margin: auto auto;
+}
+
+nav .nav-link, .navbar-brand{
+    color: white;
+}
+
+section {
+    margin-bottom: 20px;
 }
 
 .navlinks {
@@ -41,60 +44,99 @@ nav {
     font-size: 2em;
 }
 
-.wip{
+.wip {
     background-image: url("./../assets/development.png");
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.banner{
 
-}
-
-.banner-container{
+.banner-container {
     height: 25vw;
 }
 
-.comandos{
+.comandos {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
-.titulo{
+.titulo {
     font-size: 1.3em;
     font-weight: bold;
     text-decoration: overline;
     margin-bottom: 10px;
 }
 
-.accordion{
+.nav-pills button {
+    margin: 1px 0;
+    height: 50px;
+}
+
+.nav-pills button:hover {
+    background-color: #5865F2;
+    color: white;
+}
+
+.accordion {
     min-width: 50vw;
     margin-bottom: 10px;
 }
 
-.item{
+
+.my-accordion-button{
+    border: none;
+    padding: 20px;
+    outline: none;
+    width: 100%;
+    text-align: start;
+    background-color: #5865F2;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.my-accordion-button:hover{
+    background-color: white;
+    color: black;
+}
+
+
+.item {
     margin-bottom: 10px;
 }
 
-.comandos-content{
+.comandos-container {
+    box-shadow: inset 2px 2px 5px 0px #e4e4e4;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.comandos-content {
     display: flex;
     justify-content: space-between;
 }
 
-.comandos-content p{
+.comandos-content p {
     max-width: 30vw;
 }
 
-
-.badge{
-    margin-left: 30px;
+.badge {
+    margin-left: 20px;
 }
 
-small{
+small {
     font-style: italic;
     font-size: 0.9em;
+}
+
+.sobre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
