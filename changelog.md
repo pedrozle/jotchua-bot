@@ -1,3 +1,8 @@
+### versão: 2.1
+- Criado uma página de documentação do bot, [Jotchua-Docs](https://pedrozle.github.io/jotchua-bot)
+
+- Adicionado favicon no site.
+
 ### versão: 2.0
 
 -   Refatorar todo o código anterior de maneira mais clara e simples
