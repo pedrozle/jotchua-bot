@@ -2,14 +2,17 @@
 
 body {
     font-family: "Inder", sans-serif;
+    background-color: #0B0B0C;
+    color: white
 }
 
 header {
-    background-color: #5865F2;
+    background-color: #2e2e2e;
+    margin-bottom: 10px;
 }
 
 nav {
-    background-color: #5865F2;
+    background-color: #2e2e2e;
     width: 80vw;
     margin: auto auto;
 }
@@ -28,15 +31,9 @@ section {
     align-items: center;
 }
 
-.links {
-    margin-right: 10px;
-    text-decoration: none;
-    transition: 0.7s;
-    padding: 10px;
-}
-
-.links:hover {
+.nav-link:hover, .navbar-brand:hover{
     text-decoration: underline;
+    color: #5865F2;
 }
 
 .logo {
@@ -65,7 +62,6 @@ section {
 
 .titulo {
     font-size: 1.3em;
-    font-weight: bold;
     text-decoration: overline;
     margin-bottom: 10px;
 }
@@ -144,6 +140,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #eeeeee;
+    background-color: #2e2e2e;
+    color: white;
     flex-direction: column;
 }
