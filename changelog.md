@@ -1,3 +1,7 @@
+### versão 2.1.1
+- Iniciado a configuração inicial do bot
+
+
 ### versão: 2.1
 - Criado uma página de documentação do bot, [Jotchua-Docs](https://pedrozle.github.io/jotchua-bot)
 
