@@ -3,6 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import Context
 from src.methods import embed_msg
 from datetime import datetime
+import random
 
 
 @commands.command()
@@ -57,8 +58,36 @@ async def info(ctx: commands.Context, user: Member = None):
     footer = f"Perguntado por {ctx.message.author}"
     await ctx.send(embed=embed_msg(ctx, title_header=title_header, title_content=title_content, desc_content=desc, img_content=avatar, footer=footer))
 
+@commands.command()
+async def decida(ctx: commands.Context, *choices: str):
+    """Pede ao cão para decidir entre várias opções
+
+    uso: decida <arg1> ou <arg2> ou ... ou <argN>
+
+    Argumentos:
+        - args: as opções a qual o Jotchua deve escolher
+    """
+
+    if not choices:
+        await ctx.send("Temq colocar algo ne")
+        return
+
+    choices_list = []
+    frase = ""
+    for c in choices:
+        if c != 'ou':
+            frase += f"{c} "
+        else:
+            choices_list.append(frase)
+            frase = ""
+
+    print(frase)
+    choices_list.append(frase)
+    result = f"Eu escolho acho que\n**{random.choice(choices_list)}** "
+    await ctx.send(result)
 
 async def setup(bot: commands.Bot):
     # Every extension should have this function
     bot.add_command(membros)
     bot.add_command(info)
+    bot.add_command(decida)
