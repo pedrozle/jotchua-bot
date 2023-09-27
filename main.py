@@ -43,7 +43,7 @@ intents.members = True
 intents.message_content = True
 command_prefix = ["jot!", "j!"]
 
-# TODO: Adicionar aqui o diretório dos comandos
+print("first commit")
 cogs = ["src.comandos.basic",]
 
 client = MyClient(intents=intents, command_prefix=command_prefix)
