@@ -33,7 +33,7 @@ class MyClient(commands.Bot):
                 await channel.send(f"Olá, {guild.name}, eu sou Jotchua!")
             break
 
-    async def on_message(self, ctx: Context, message: Message):
+    async def on_message(self, message: Message):
         print(f"Message from {message.author}: {message.content}")
 
 
