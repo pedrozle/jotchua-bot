@@ -86,8 +86,37 @@ async def decida(ctx: commands.Context, *choices: str):
     result = f"Eu escolho acho que\n**{random.choice(choices_list)}** "
     await ctx.send(result)
 
+@commands.command()
+async def repita(ctx: commands.Context, times: int = None , *content: str):
+    """Repete uma mensagem várias vezes
+
+    uso: repita <nro de vezes> <mensagem>
+
+    Argumentos:
+        - nro de vezes: Total de vezes que a mensagem será repetida
+        - mensagem: a mensagem a ser repetida
+    """
+    if times is None or times < 1:
+        response = "Não dá pra repetir 0 vezes! :rage:\nBote um valor pra eu repetir\n\n EX:`repita 2 quero caféééé`"
+        await ctx.send(response)
+        return
+    
+    if not content:
+        response = "Não sei o que é para repetir! :face_with_raised_eyebrow:\nDiga o que é pra repetir\n\n EX:`repita 2 quero caféééé`"
+        await ctx.send(response)
+        return
+
+    frase = ""
+    for c in content:
+        frase += f"{c} "
+
+    for i in range(times):
+        await ctx.send(frase)
+    await ctx.send(f"Disse: <@{ctx.message.author.id}>")
+
 async def setup(bot: commands.Bot):
     # Every extension should have this function
     bot.add_command(membros)
     bot.add_command(info)
     bot.add_command(decida)
+    bot.add_command(repita)
