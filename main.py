@@ -43,6 +43,6 @@ command_prefix = ["jot!", "j!"]
 
 # TODO: Adicionar aqui o diretório dos comandos
 # cogs = ["src.comandos.basic", "src.comandos.rp", "src.comandos.social"]
-
+print("first commit")
 client = MyClient(intents=intents, command_prefix=command_prefix)
 client.run(BOT_TOKEN)
