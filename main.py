@@ -18,12 +18,13 @@ class MyClient(commands.Bot):
         for guild in self.guilds:
             print(f"--- {guild.name} ---")
             for member in guild.members:
+
                 print(member)
             print(f"--- end ---\n\n")
 
         # TODO: Descomentar aqui quando configurar os comandos
-        # for cog in cogs:
-        #     await self.load_extension(cog)
+        for cog in cogs:
+            await self.load_extension(cog)
         print("--- Ready ---")
 
     async def on_guild_join(self, guild: Guild):
@@ -35,14 +36,15 @@ class MyClient(commands.Bot):
 
     async def on_message(self, message: Message):
         print(f"Message from {message.author}: {message.content}")
-
+        await self.process_commands(message)
 
 intents = discord.Intents.default()
+intents.members = True
 intents.message_content = True
 command_prefix = ["jot!", "j!"]
 
-# TODO: Adicionar aqui o diretório dos comandos
-# cogs = ["src.comandos.basic", "src.comandos.rp", "src.comandos.social"]
 print("first commit")
+cogs = ["src.comandos.basic",]
+
 client = MyClient(intents=intents, command_prefix=command_prefix)
 client.run(BOT_TOKEN)
