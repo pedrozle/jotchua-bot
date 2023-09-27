@@ -114,9 +114,37 @@ async def repita(ctx: commands.Context, times: int = None , *content: str):
         await ctx.send(frase)
     await ctx.send(f"Disse: <@{ctx.message.author.id}>")
 
+@commands.command()
+async def dado(ctx: commands.Context, dice: str = None):
+    """Joga um dado dY, x vezes
+
+    uso: dado <x>d<Y>
+    ex: dado 2d10
+        resultado: 2, 6
+
+    Argumentos:
+        - x: quantidade de dados
+        - Y: valor do dado
+    """
+    
+    rolls: int = 1
+    size: int = 6
+    result = "Eu lancei um dado"
+    if dice is not None:
+        rolls, size = map(int, dice.split('d'))
+        result = f"{result} {rolls}d{size} :game_die:\n"
+    else:
+        result = f"{result} 1d6 :game_die:\n"
+
+    print(result)
+    for i in range(rolls):
+        result += f"Lançamento {i}: **{str(random.randint(1, size))}**.\n"
+    await ctx.send(result)
+
 async def setup(bot: commands.Bot):
     # Every extension should have this function
     bot.add_command(membros)
     bot.add_command(info)
     bot.add_command(decida)
     bot.add_command(repita)
+    bot.add_command(dado)
