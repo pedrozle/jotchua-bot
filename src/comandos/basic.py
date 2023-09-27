@@ -1,7 +1,8 @@
-import discord
+from discord import Member
 from discord.ext import commands
 from discord.ext.commands import Context
 from src.methods import embed_msg
+from datetime import datetime
 
 
 @commands.command()
@@ -33,6 +34,31 @@ async def membros(ctx: Context):
         )
     )
 
+@commands.command()
+async def info(ctx: commands.Context, user: Member = None):
+    """Exibe informações sobre você ou sobre um usuário especificado
+
+    uso: info <nada | apelido>
+
+    Argumentos:
+        - nada: Exibe informações sobre o seu usuário
+        - apelido: Exibe informações sobre o usuário com aquele apelido
+    """
+
+    if user is None:
+        user = ctx.message.author
+
+    title_header = f"Informações sobre {user.name}"
+    title_content = user.name
+    avatar = user.display_avatar.url
+    joined_at = user.joined_at.replace(tzinfo=None)
+    diff = datetime.now() - joined_at
+    desc = f"Entrou no servidor há {diff.days} dias!"
+    footer = f"Perguntado por {ctx.message.author}"
+    await ctx.send(embed=embed_msg(ctx, title_header=title_header, title_content=title_content, desc_content=desc, img_content=avatar, footer=footer))
+
+
 async def setup(bot: commands.Bot):
     # Every extension should have this function
     bot.add_command(membros)
+    bot.add_command(info)
