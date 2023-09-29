@@ -90,7 +90,6 @@ class BasicComands(Cog, name="Comandos Básicos"):
                 choices_list.append(frase)
                 frase = ""
 
-        print(frase)
         choices_list.append(frase)
         result = f"Eu escolho acho que\n**{random.choice(choices_list)}** "
         await ctx.send(result)
@@ -153,7 +152,6 @@ class BasicComands(Cog, name="Comandos Básicos"):
         else:
             result = f"{result} 1d6 :game_die:\n"
 
-        print(result)
         for i in range(rolls):
             result += f"Lançamento {i}: **{str(random.randint(1, size))}**.\n"
         await ctx.send(result)

@@ -53,7 +53,6 @@ class SocialComands(Cog, name="Social"):
         req = requests.get("https://api.waifu.pics/sfw/hug")
         img_url = ""
 
-        print(req)
         if req.status_code == 200:
             img_url = req.json()["url"]
 
@@ -114,7 +113,7 @@ class SocialComands(Cog, name="Social"):
         req = requests.get("https://api.waifu.pics/sfw/slap")
         img_url = ""
 
-        print(req)
+
         if req.status_code == 200:
             img_url = req.json()["url"]
 

@@ -23,10 +23,6 @@ class MyClient(commands.Bot):
 
                 print(member)
             print(f"--- end ---\n\n")
-
-        # for f in os.listdir("./src"):
-        #     if f.endswith(".py"):
-        #         await client.load_extension("comandos." + f[:-3])
         print("--- Ready ---")
     
     async def setup_hook(self):
@@ -49,7 +45,6 @@ intents.members = True
 intents.message_content = True
 command_prefix = ["jot!", "j!"]
 
-print("first commit")
 cogs = ["src.comandos.basic", "src.comandos.social"]
 
 client = MyClient(intents=intents, command_prefix=command_prefix)
