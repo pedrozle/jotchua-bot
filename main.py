@@ -50,7 +50,7 @@ intents.message_content = True
 command_prefix = ["jot!", "j!"]
 
 print("first commit")
-cogs = ["src.comandos.basic",]
+cogs = ["src.comandos.basic", "src.comandos.social"]
 
 client = MyClient(intents=intents, command_prefix=command_prefix)
 client.run(BOT_TOKEN)
