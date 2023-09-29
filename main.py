@@ -24,10 +24,14 @@ class MyClient(commands.Bot):
                 print(member)
             print(f"--- end ---\n\n")
 
-        # TODO: Descomentar aqui quando configurar os comandos
-        for cog in cogs:
-            await self.load_extension(cog)
+        # for f in os.listdir("./src"):
+        #     if f.endswith(".py"):
+        #         await client.load_extension("comandos." + f[:-3])
         print("--- Ready ---")
+    
+    async def setup_hook(self):
+        for extension in cogs:
+            await self.load_extension(extension)
 
     async def on_guild_join(self, guild: Guild):
         for channel in guild.text_channels:
