@@ -87,8 +87,8 @@ async def decida(ctx: commands.Context, *choices: str):
     await ctx.send(result)
 
 @commands.command()
-async def repita(ctx: commands.Context, times: int = None , *content: str):
-    """Repete uma mensagem várias vezes
+async def repita(ctx: commands.Context, times, *content: str):
+    """Repete uma mensagem várias vezes, max 10 vezes
 
     uso: repita <nro de vezes> <mensagem>
 
@@ -96,6 +96,16 @@ async def repita(ctx: commands.Context, times: int = None , *content: str):
         - nro de vezes: Total de vezes que a mensagem será repetida
         - mensagem: a mensagem a ser repetida
     """
+
+    try:
+        times = int(times)
+        if times > 10:
+            times = 10
+    except ValueError:
+        response = "nro vezes inválido :dizzy_face:\nO número de vezes deve ser um valor inteiro maior que 0\n\n EX:`repita 2 quero caféééé`"
+        await ctx.send(response)
+        return
+
     if times is None or times < 1:
         response = "Não dá pra repetir 0 vezes! :rage:\nBote um valor pra eu repetir\n\n EX:`repita 2 quero caféééé`"
         await ctx.send(response)
