@@ -7,8 +7,10 @@ from discord import Message, Guild
 from dotenv import load_dotenv
 
 load_dotenv()
-BOT_TOKEN = os.getenv("BOT_TOKEN")
 
+DEBUG = os.getenv("DEBUG")
+
+BOT_TOKEN = os.getenv("BOT_TOKEN_DEV") if DEBUG else os.getenv("BOT_TOKEN")
 
 class MyClient(commands.Bot):
     async def on_ready(self):
