@@ -5,6 +5,7 @@ from discord.ext.commands import Context
 from src.methods import embed_msg
 from datetime import datetime
 import random
+import requests
 
 
 class SocialComands(Cog, name="Social"):
@@ -49,21 +50,28 @@ class SocialComands(Cog, name="Social"):
         )
         footer = f"Abraçou em {datetime.now().strftime('%d-%m-%Y')}"
 
-        await ctx.send(
-            embed=embed_msg(
-                ctx,
-                icon_header=icon_header,
-                title_header=title_header,
-                title_content=title_content,
-                desc_content=desc_content,
-                footer=footer,
-            )
+        req = requests.get("https://api.waifu.pics/sfw/hug")
+        img_url = ""
+
+        print(req)
+        if req.status_code == 200:
+            img_url = req.json()["url"]
+
+        embed = embed_msg(
+            ctx,
+            icon_header=icon_header,
+            title_header=title_header,
+            title_content=title_content,
+            desc_content=desc_content,
+            footer=footer,
         )
 
+        embed.set_image(url=img_url)
+
+        await ctx.send(embed=embed)
+
     @abracar.error
-    async def info_error(
-        self, ctx: Context, error
-    ):
+    async def info_error(self, ctx: Context, error):
         if isinstance(error, commands.BadArgument):
             await ctx.send(
                 "AHA! :face_with_monocle:\nEsse caba não está no servidor!!!!! :angry:"
@@ -103,21 +111,28 @@ class SocialComands(Cog, name="Social"):
         )
         footer = f"Porrada em {datetime.now().strftime('%d-%m-%Y')}"
 
-        await ctx.send(
-            embed=embed_msg(
-                ctx,
-                icon_header=icon_header,
-                title_header=title_header,
-                title_content=title_content,
-                desc_content=desc_content,
-                footer=footer,
-            )
+        req = requests.get("https://api.waifu.pics/sfw/slap")
+        img_url = ""
+
+        print(req)
+        if req.status_code == 200:
+            img_url = req.json()["url"]
+
+        embed = embed_msg(
+            ctx,
+            icon_header=icon_header,
+            title_header=title_header,
+            title_content=title_content,
+            desc_content=desc_content,
+            footer=footer,
         )
 
+        embed.set_image(url=img_url)
+
+        await ctx.send(embed=embed)
+
     @tapa.error
-    async def info_error(
-        self, ctx: Context, error
-    ):
+    async def info_error(self, ctx: Context, error):
         if isinstance(error, commands.BadArgument):
             await ctx.send(
                 "AHA! :face_with_monocle:\nEsse caba não está no servidor!!!!! :angry:"
