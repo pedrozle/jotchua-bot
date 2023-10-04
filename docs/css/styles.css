@@ -1,146 +1,278 @@
 @import url("https://fonts.googleapis.com/css2?family=Inder&display=swap");
 
+:root {
+    --discord: #5865f2;
+    --cinza: #2e2e2e;
+    --cinza-claro: #f6f6f6;
+    --grafite: #0b0b0c;
+}
+
 body {
     font-family: "Inder", sans-serif;
-    background-color: #0B0B0C;
-    color: white
-}
-
-header {
-    background-color: #2e2e2e;
-    margin-bottom: 10px;
-}
-
-nav {
-    background-color: #2e2e2e;
-    width: 80vw;
-    margin: auto auto;
-}
-
-nav .nav-link, .navbar-brand{
+    /* background-color: var(--grafite); */
     color: white;
 }
 
-section {
-    margin-bottom: 20px;
-}
-
-.navlinks {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-link:hover, .navbar-brand:hover{
-    text-decoration: underline;
-    color: #5865F2;
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 2em;
-}
-
-.wip {
-    background-image: url("./../assets/development.png");
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-
-.banner-container {
-    height: 25vw;
-}
-
-.comandos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-.titulo {
-    font-size: 1.3em;
-    text-decoration: overline;
-    margin-bottom: 10px;
-}
-
-.nav-pills button {
-    margin: 1px 0;
-    height: 50px;
-}
-
-.nav-pills button:hover {
-    background-color: #5865F2;
-    color: white;
-}
-
-.accordion {
-    min-width: 50vw;
-    margin-bottom: 10px;
-}
-
-
-.my-accordion-button{
-    border: none;
-    padding: 20px;
-    outline: none;
-    width: 100%;
-    text-align: start;
-    background-color: #5865F2;
-    color: white;
+.btn {
+    margin: 20px;
+    padding: 15px 20px;
     border-radius: 10px;
+    background-color: var(--discord);
+    color: white;
+    text-decoration: none;
     transition: 0.3s;
 }
 
-.my-accordion-button:hover{
+.btn-white {
+    margin: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
     background-color: white;
-    color: black;
+    color: var(--grafite);
+    text-decoration: none;
 }
 
+.btn-glow-white {
+    transition: 0.3s;
+    animation-name: btnglow-white;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
 
-.item {
+@keyframes btnglow-white {
+    0% {
+        box-shadow: 0px 0px 0px 0px white;
+    }
+    50% {
+        box-shadow: 0px 0px 20px 3px white;
+    }
+    100% {
+        box-shadow: 0px 0px 0px 0px white;
+    }
+}
+
+.btn-glow {
+    transition: 0.3s;
+    animation-name: btnglow;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes btnglow {
+    0% {
+        box-shadow: 0px 0px 0px 0px var(--discord);
+    }
+    50% {
+        box-shadow: 0px 0px 20px 3px var(--discord);
+    }
+    100% {
+        box-shadow: 0px 0px 0px 0px var(--discord);
+    }
+}
+
+.btn:hover {
+    border-radius: 20px;
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
-.comandos-container {
-    box-shadow: inset 2px 2px 5px 0px #e4e4e4;
-    padding: 10px;
-    border-radius: 10px;
+.subtitle {
+    font-size: 1.5em;
+    color: var(--cinza);
 }
+/* ############### HEADER ################## */
 
-.comandos-content {
-    display: flex;
-    justify-content: space-between;
-}
-
-.comandos-content p {
-    max-width: 30vw;
-}
-
-.badge {
-    margin-left: 20px;
-}
-
-small {
-    font-style: italic;
-    font-size: 0.9em;
-}
-
-.sobre {
+header {
+    background-color: var(--grafite);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: var(--grafite);
+    text-align: center;
 }
+
+nav {
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .links .link {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 2.5em;
+}
+
+.logo:hover {
+    text-decoration: underline;
+}
+
+/* ############### MAIN ################## */
+/* ####### banner ########## */
+
+.banner {
+    background-color: var(--discord);
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--grafite);
+    text-align: center;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#changeText {
+    color: white;
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
+
+/* ####### comandos ########## */
+
+.comandos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--grafite);
+}
+
+.jotchua-hero {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.jotchua-hero img {
+    border-radius: 50%;
+    width: 20%;
+}
+
+.divider {
+    content: "";
+    background-color: var(--discord);
+    border-radius: 50%;
+    width: 20%;
+    height: 1px;
+    margin: 10px;
+}
+
+.comandos .content {
+    display: flex;
+}
+
+.comandos-class {
+    width: 50%;
+}
+
+.class {
+    width: 80%;
+}
+
+.comandos-class p {
+    margin: 20px;
+}
+
+.comandos-lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--cinza-claro);
+    color: var(--grafite);
+}
+
+/* ####### equipe ########## */
+
+.equipe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--grafite);
+}
+
+.lista-equipe {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.pessoa {
+    margin-top: 20px;
+    width: min-content;
+    text-align: center;
+}
+
+.pessoa a img {
+    border-radius: 50%;
+    width: 120px;
+    border: var(--cinza) 2px solid;
+}
+
+.pessoa p {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.social-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.link-icon {
+    border: none;
+    border-radius: 0;
+    width: 20px;
+    fill: #2e2e2e;
+    transition: 0.3s;
+}
+
+.link-icon:hover {
+    fill: var(--discord);
+}
+
+/* ############### FOOTER ################## */
 
 footer {
-    padding: 10px;
+    padding: 20px;
+    background-color: var(--grafite);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2e2e2e;
-    color: white;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
