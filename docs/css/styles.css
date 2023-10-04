@@ -3,6 +3,7 @@
 :root {
     --discord: #5865f2;
     --cinza: #2e2e2e;
+    --cinza-claro: #f6f6f6;
     --grafite: #0b0b0c;
 }
 
@@ -46,17 +47,6 @@ body {
     border-radius: 20px;
 }
 
-/* ############### MAIN ################## */
-
-.equipe {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    color: var(--grafite);
-}
-
 .title {
     font-size: 2.5em;
     font-weight: bold;
@@ -66,6 +56,77 @@ body {
 .subtitle {
     font-size: 1.5em;
     color: var(--cinza);
+}
+/* ############### MAIN ################## */
+
+/* ####### comandos ########## */
+
+.comandos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--grafite);
+}
+
+.jotchua-hero{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.jotchua-hero img{
+    border-radius: 50%;
+    width: 20%;
+}
+
+.divider{
+    content: "";
+    background-color: var(--discord);
+    border-radius: 50%;
+    width: 20%;
+    height: 1px;
+    margin: 10px;
+}
+
+.comandos .content{
+    display: flex;
+}
+
+.comandos-class{
+    width: 50%;
+}
+
+.class{
+    width: 80%;
+}
+
+.comandos-class p{
+    margin: 20px;
+}
+
+.comandos-lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--cinza-claro);
+    color: var(--grafite);
+}
+
+/* ####### equipe ########## */
+
+.equipe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--grafite);
 }
 
 .lista-equipe {
