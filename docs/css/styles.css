@@ -20,6 +20,7 @@ body {
     background-color: var(--discord);
     color: white;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .btn-white {
@@ -87,6 +88,43 @@ body {
     font-size: 1.5em;
     color: var(--cinza);
 }
+/* ############### HEADER ################## */
+
+header {
+    background-color: var(--grafite);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--grafite);
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .links .link {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 2.5em;
+}
+
+.logo:hover {
+    text-decoration: underline;
+}
+
 /* ############### MAIN ################## */
 /* ####### banner ########## */
 
@@ -99,8 +137,20 @@ body {
     align-items: center;
     color: var(--grafite);
     text-align: center;
-
 }
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#changeText {
+    color: white;
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
 
 /* ####### comandos ########## */
 

@@ -13,10 +13,26 @@
         <link rel="stylesheet" href="./css/styles.css" type="text/css" />
     </head>
     <body>
+        <header>
+            <nav>
+                <a class="logo" href="">Jotchua Bot</a>
+                <div class="links">
+                    <a class="link" href="#comandos">Comandos</a>
+                    <a class="link" href="#comandos">Equipe</a>
+                    <a
+                        href="https://discord.com/api/oauth2/authorize?client_id=1030981696528584795&permissions=0&scope=bot"
+                        target="_blank"
+                        class="btn btn-white"
+                        >Adicionar Bot</a
+                    >
+                </div>
+            </nav>
+        </header>
         <main>
             <section class="banner">
                 <p class="title">
-                    Seu assistente personalizado para <br> o seu servidor do Discord!
+                    Um bot para Discord repleto de recursos <br />
+                    para <span id="changeText">melhorar</span> seu servidor.
                 </p>
                 <a
                     href="https://discord.com/api/oauth2/authorize?client_id=1030981696528584795&permissions=0&scope=bot"
@@ -246,5 +262,22 @@
             >
             <p>Jotchua &copy; 2022-2023</p>
         </footer>
+        <script>
+            var listaDeTextos = ["animar", "bagunçar", "moderar", "divertir"];
+            var indice = 0;
+
+            // Função para atualizar o texto do parágrafo
+            function atualizarTexto() {
+                var paragrafo = document.getElementById("changeText");
+                paragrafo.innerHTML = listaDeTextos[indice];
+                indice = (indice + 1) % listaDeTextos.length;
+            }
+
+            // Chama a função inicialmente
+            atualizarTexto();
+
+            // Define um intervalo para atualizar o texto a cada 5 segundos
+            setInterval(atualizarTexto, 2000);
+        </script>
     </body>
 </html>
