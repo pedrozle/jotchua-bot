@@ -22,6 +22,36 @@ body {
     text-decoration: none;
 }
 
+.btn-white {
+    margin: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: var(--grafite);
+    text-decoration: none;
+}
+
+.btn-glow-white {
+    transition: 0.3s;
+    animation-name: btnglow-white;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes btnglow-white {
+    0% {
+        box-shadow: 0px 0px 0px 0px white;
+    }
+    50% {
+        box-shadow: 0px 0px 20px 3px white;
+    }
+    100% {
+        box-shadow: 0px 0px 0px 0px white;
+    }
+}
+
 .btn-glow {
     transition: 0.3s;
     animation-name: btnglow;
@@ -58,6 +88,19 @@ body {
     color: var(--cinza);
 }
 /* ############### MAIN ################## */
+/* ####### banner ########## */
+
+.banner {
+    background-color: var(--discord);
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--grafite);
+    text-align: center;
+
+}
 
 /* ####### comandos ########## */
 
@@ -69,7 +112,7 @@ body {
     color: var(--grafite);
 }
 
-.jotchua-hero{
+.jotchua-hero {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -78,12 +121,12 @@ body {
     width: 50%;
 }
 
-.jotchua-hero img{
+.jotchua-hero img {
     border-radius: 50%;
     width: 20%;
 }
 
-.divider{
+.divider {
     content: "";
     background-color: var(--discord);
     border-radius: 50%;
@@ -92,19 +135,19 @@ body {
     margin: 10px;
 }
 
-.comandos .content{
+.comandos .content {
     display: flex;
 }
 
-.comandos-class{
+.comandos-class {
     width: 50%;
 }
 
-.class{
+.class {
     width: 80%;
 }
 
-.comandos-class p{
+.comandos-class p {
     margin: 20px;
 }
 
