@@ -223,7 +223,7 @@ nav .links .link {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 20px 0;
     background-color: var(--cinza-mais-claro);
     color: var(--grafite);
     width: 100%;
@@ -236,7 +236,6 @@ nav .links .link {
     display: flex;
     align-items: start;
     justify-content: space-between;
-    height: 600px;
 }
 
 .categorias {
@@ -275,7 +274,7 @@ nav .links .link {
 }
 
 .detalhes {
-    max-height: 100%;
+    max-height: 600px;
     min-height: 200px;
     flex-direction: column;
     justify-content: space-around;
@@ -362,9 +361,11 @@ nav .links .link {
     background-color: var(--azure-darker);
 }
 
-.comandos-basicos{
+.comandos-basicos, .social, .role-play{
     display: none;
 }
+
+
 
 .exibe{
     display: block;
