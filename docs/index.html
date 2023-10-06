@@ -16,9 +16,12 @@
         <header>
             <nav>
                 <a class="logo" href="">Jotchua Bot</a>
+                <a class="logo-mobile" href="">
+                    <img src="assets/jot.svg" alt="">
+                </a>
                 <div class="links">
                     <a class="link" href="#comandos">Comandos</a>
-                    <a class="link" href="#comandos">Equipe</a>
+                    <a class="link" href="#equipe">Equipe</a>
                     <a
                         href="https://discord.com/api/oauth2/authorize?client_id=1030981696528584795&permissions=0&scope=bot"
                         target="_blank"
@@ -89,7 +92,7 @@
                                 Comandos Básicos
                             </span>
                             <span class="categoria-amount mantis-darker">
-                                0
+                                5
                             </span>
                         </div>
                         <div
@@ -111,12 +114,12 @@
                                 Social
                             </span>
                             <span class="categoria-amount azure-darker">
-                                0
+                                2
                             </span>
                         </div>
                     </div>
                     <div class="detalhes" id="detalhes-container">
-                        <div id="comandos-basicos" class="comandos-basicos">
+                        <div id="comandos-basicos" class="comandos-basicos exibe">
                             <div class="detalhe-container">
                                 <p class="detalhe-title mantis">
                                     Exibir lista dos membros
@@ -241,8 +244,52 @@
                                 </p>
                             </div>
                         </div>
-                        <div id="role-play"></div>
-                        <div id="social"></div>
+                        <div id="role-play" class="role-play">
+                            soon!
+                        </div>
+                        <div id="social" class="social">
+                            <div class="detalhe-container">
+                                <p class="detalhe-title azure">
+                                    Abraçar um usuário
+                                </p>
+                                <div class="detalhe-content">
+                                    <span class="code">abracar</span>
+                                    <span class="code-args">usuario</span>
+                                    <p class="descricao">
+                                        Você abraça o usuário informado. Que
+                                        fofo!
+                                    </p>
+                                </div>
+                                <p class="detalhe-exemplo">
+                                    <span>&gt; usuario: j!abracar ciclano</span
+                                    ><br />
+                                    <span
+                                        >&gt; Jotchua: Temporada de abraços<br />
+                                        usuário abraçou ciclano, que fofo!
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="detalhe-container">
+                                <p class="detalhe-title azure">
+                                    Bater em um usuário
+                                </p>
+                                <div class="detalhe-content">
+                                    <span class="code">tapa</span>
+                                    <span class="code-args">usuario</span>
+                                    <p class="descricao">
+                                        Você não se conteve e sentou a porrada no usuario informado.
+                                    </p>
+                                </div>
+                                <p class="detalhe-exemplo">
+                                    <span>&gt; usuário: j!tapa ciclano</span
+                                    ><br />
+                                    <span
+                                        >&gt; Jotchua: CHAMA PRA PORRADA<br />
+                                        usuário sentou a porrada em ciclano!
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -432,58 +479,6 @@
             >
             <p>Jotchua &copy; 2022-2023</p>
         </footer>
-        <script>
-            var listaDeTextos = [
-                "animar",
-                "bagunçar",
-                "moderar",
-                "divertir",
-                "agitar",
-                "colorir",
-                "impulsionar",
-            ];
-            var indice = 0;
-
-            // Função para atualizar o texto do parágrafo
-            function atualizarTexto() {
-                var paragrafo = document.getElementById("changeText");
-                paragrafo.innerHTML = listaDeTextos[indice];
-                indice = (indice + 1) % listaDeTextos.length;
-            }
-
-            // Chama a função inicialmente
-            atualizarTexto();
-
-            // Define um intervalo para atualizar o texto a cada 5 segundos
-            setInterval(atualizarTexto, 2000);
-
-            const detalhesContainer =
-                document.getElementById("detalhes-container");
-            const categoriaContainers = document.querySelectorAll(
-                ".categoria-container"
-            );
-
-            categoriaContainers.forEach((categoria) => {
-                categoria.addEventListener("click", () => {
-                    // Obtém o valor do atributo data-categoria
-                    const categoriaSelecionada =
-                        categoria.getAttribute("data-categoria");
-
-                    // Agora você pode usar a categoriaSelecionada para carregar o conteúdo apropriado nos detalhes
-                    // Por exemplo, você pode ter um objeto ou uma função que mapeia categorias para conteúdo
-                    const conteudo = exibeDetalhes(categoriaSelecionada);
-                });
-            });
-
-            function exibeDetalhes(categoria) {
-                const conteudo = document.getElementById(categoria);
-                console.log(conteudo);
-                if (conteudo.classList.contains("exibe") == false){
-                    conteudo.classList.add("exibe")
-                }else{
-                    conteudo.classList.remove("exibe")
-                }
-            }
-        </script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>

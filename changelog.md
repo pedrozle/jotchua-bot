@@ -1,4 +1,4 @@
-### versão 2.1.2
+## v2.2.1
 - Adicionado comandos básicos
     - Repita
     - Decida
@@ -6,21 +6,21 @@
     - Membros
     - Info
 
-### versão 2.1.1
+## v2.1.1
 - Iniciado a configuração inicial do bot
 
-### versão: 2.1
+## v2.1.0
 - Criado uma página de documentação do bot, [Jotchua-Docs](https://pedrozle.github.io/jotchua-bot)
 
 - Adicionado favicon no site.
 
-### versão: 2.0
+## v2.0.0
 
 -   Refatorar todo o código anterior de maneira mais clara e simples
 -   Adicionado Readme.md com informações mais relevantes
 -   Adicionado Changelog.md
 
-### Old: 1.0.0
+##  Old: v1.0.0
 
 -   Versão anterior do bot
 
