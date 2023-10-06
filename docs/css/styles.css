@@ -131,6 +131,15 @@ nav .links .link {
     font-size: 2.5em;
 }
 
+.logo-mobile {
+    display: none;
+}
+
+.logo-mobile img {
+    border-radius: 50%;
+    width: 100px;
+}
+
 .logo:hover {
     text-decoration: underline;
 }
@@ -361,13 +370,13 @@ nav .links .link {
     background-color: var(--azure-darker);
 }
 
-.comandos-basicos, .social, .role-play{
+.comandos-basicos,
+.social,
+.role-play {
     display: none;
 }
 
-
-
-.exibe{
+.exibe {
     display: block;
 }
 
@@ -400,6 +409,13 @@ nav .links .link {
     border-radius: 50%;
     width: 120px;
     border: var(--cinza) 2px solid;
+    transition: 0.3s;
+}
+
+.pessoa a img:hover {
+    transform: scale3d(1.2, 1.2, 1);
+    border: var(--discord) 2px solid;
+    padding: 5px;
 }
 
 .pessoa p {
@@ -435,4 +451,51 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+    /* header */
+    .logo {
+        display: none;
+    }
+    .logo-mobile {
+        display: block;
+    }
+
+    nav {
+        width: 90vw;
+    }
+    nav .links .link {
+        font-size: 1em;
+        margin-right: 10px;
+    }
+
+    /* main */
+
+    .comandos .content {
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+    }
+
+    .comandos-class{
+        width: 90vw;
+    }
+
+    .class{
+        width: 100%;
+    }
+
+    .title{
+        font-size: 1.7em;
+    }
+
+    .subtitle{
+        font-size: 1.2em;
+    }
+
+    .comandos-container{
+        width: 90vw;
+    }
+
 }
