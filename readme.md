@@ -48,13 +48,3 @@ A documentação do Jotchua-Bot poderá ser encontrada [neste link](https://gith
 | Informação sobre um usuário | `info <nada ou apelido >`               | Exibe informações sobre você (caso não envie nenhum apelido) ou sobre um usuário com aquele (apelido/nome/id) |
 | Repetir                     | `repetir <nro de vezes> <mensagem>`     | Repete <nro de vezes> vezes a <mensagem> e informa quem disse                                                 |
 | Jotchua Decide              | `decida arg_1 ou arg_2 ou ... ou arg_n` | Escolhe para você um dos dois argumentos que foram passados para ele (pode passar mais de 2 argumentos)       |
-
-# Testes
-
-Utilizando a biblioteca [pytest](https://github.com) é possível implementar o sistema orientado à [TDD](https://github.com), escrever funções de teste antes de escrever as funções reais garantindo que as novas implementações não venham quebrar o sistema.
-
-Para executar as funções de teste, abra o terminal e execute a função
-
-```
-pytest
-```
