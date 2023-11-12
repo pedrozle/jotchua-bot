@@ -1,5 +1,6 @@
 import os
 import discord
+from discord import app_commands
 from discord.ext import commands
 from discord.ext.commands.context import Context
 from discord import Message, Guild
@@ -14,6 +15,12 @@ BOT_TOKEN = os.getenv("BOT_TOKEN_DEV") if DEBUG else os.getenv("BOT_TOKEN")
 
 class MyClient(commands.Bot):
     async def on_ready(self):
+        try:
+            synced  = await self.tree.sync()
+            print(f"Synced {len(synced)} command(s)")
+        except  Exception as e:
+            print(e)
+            exit()
         print("------")
         print(f"Logged in as {self.user} (ID: {self.user.id})")
         print("------")

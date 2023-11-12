@@ -1,27 +1,32 @@
 from discord import Member
 from discord.ext import commands
+from discord import app_commands, Interaction
 from discord.ext.commands import Bot, Cog
 from discord.ext.commands import Context
 from src.methods import embed_msg
 from datetime import datetime
 import random
 
-class BasicComands(Cog, name="Comandos Básicos"):
 
+class BasicComands(Cog, name="Comandos Básicos"):
     def __init__(self, client: Bot):
-        self.client = client # sets the client variable so we can use it in cogs
+        self.client = client  # sets the client variable so we can use it in cogs
 
     @commands.Cog.listener()
     async def on_ready(self) -> None:
         pass
 
-    @commands.command()
-    async def membros(self, ctx: Context):
+    @app_commands.command()
+    async def hello(self, interaction: Interaction):
+        await interaction.response.send_message("Hello World")
+
+    @app_commands.command()
+    async def membros1(self, interaction: Interaction):
         """Exibe uma listagem dos membros deste servidor."""
 
         string_member = ""
-        bot: commands.Bot = ctx.bot
-        id = ctx.message.guild.id
+        bot: commands.Bot = interaction.client
+        id = interaction.guild.id
         for guild in bot.guilds:
             if guild.id == id:
                 title_header = guild.name
@@ -31,11 +36,10 @@ class BasicComands(Cog, name="Comandos Básicos"):
                     string_member += f"\n{member}"
 
         desc_content = string_member
-        footer = f"Perguntado por {ctx.author}"
+        footer = f"Perguntado por {interaction.user.name}"
 
-        await ctx.send(
+        await interaction.response.send_message(
             embed=embed_msg(
-                ctx,
                 icon_header=icon_header,
                 title_header=title_header,
                 title_content=title_content,
@@ -44,8 +48,8 @@ class BasicComands(Cog, name="Comandos Básicos"):
             )
         )
 
-    @commands.command()
-    async def info(self, ctx: Context, user: Member = None):
+    @app_commands.command()
+    async def info(self, interaction: Interaction, user: Member = None):
         """Exibe informações sobre você ou sobre um usuário especificado
 
         uso: info <nada | apelido>
@@ -56,16 +60,24 @@ class BasicComands(Cog, name="Comandos Básicos"):
         """
 
         if user is None:
-            user = ctx.message.author
+            user = interaction.user
 
         title_header = f"Informações sobre {user.name}"
-        title_content = user.name
+        title_content = user.nick
         avatar = user.display_avatar.url
         joined_at = user.joined_at.replace(tzinfo=None)
         diff = datetime.now() - joined_at
         desc = f"Entrou no servidor há {diff.days} dias!"
-        footer = f"Perguntado por {ctx.message.author}"
-        await ctx.send(embed=embed_msg(ctx, title_header=title_header, title_content=title_content, desc_content=desc, img_content=avatar, footer=footer))
+        footer = f"Perguntado por {interaction.user.name}"
+        await interaction.response.send_message(
+            embed=embed_msg(
+                title_header=title_header,
+                title_content=title_content,
+                desc_content=desc,
+                img_content=avatar,
+                footer=footer,
+            )
+        )
 
     @commands.command()
     async def decida(self, ctx: Context, *choices: str):
@@ -84,7 +96,7 @@ class BasicComands(Cog, name="Comandos Básicos"):
         choices_list = []
         frase = ""
         for c in choices:
-            if c != 'ou':
+            if c != "ou":
                 frase += f"{c} "
             else:
                 choices_list.append(frase)
@@ -113,10 +125,10 @@ class BasicComands(Cog, name="Comandos Básicos"):
             return
 
         if times is None or times < 1:
-                response = "Não dá pra repetir 0 ou menos vezes! :rage:\nBote um valor pra eu repetir\n\n EX:`repita 2 quero caféééé`"
-                await ctx.send(response)
-                return
-        
+            response = "Não dá pra repetir 0 ou menos vezes! :rage:\nBote um valor pra eu repetir\n\n EX:`repita 2 quero caféééé`"
+            await ctx.send(response)
+            return
+
         if not content:
             response = "Não sei o que é para repetir! :face_with_raised_eyebrow:\nDiga o que é pra repetir\n\n EX:`repita 2 quero caféééé`"
             await ctx.send(response)
@@ -142,12 +154,12 @@ class BasicComands(Cog, name="Comandos Básicos"):
             - x: quantidade de dados
             - Y: valor do dado
         """
-        
+
         rolls: int = 1
         size: int = 6
         result = "Eu lancei um dado"
         if dice is not None:
-            rolls, size = map(int, dice.split('d'))
+            rolls, size = map(int, dice.split("d"))
             result = f"{result} {rolls}d{size} :game_die:\n"
         else:
             result = f"{result} 1d6 :game_die:\n"

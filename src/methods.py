@@ -16,7 +16,6 @@ def pick_color():
 
 
 def embed_msg(
-    ctx,
     icon_header: str = None,
     title_header: str = None,
     title_content: str = None,
