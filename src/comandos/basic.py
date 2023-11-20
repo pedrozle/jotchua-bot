@@ -17,8 +17,10 @@ class BasicComands(Cog, name="Comandos Básicos"):
         pass
 
     @app_commands.command()
-    async def hello(self, interaction: Interaction):
-        await interaction.response.send_message("Hello World")
+    async def ping(self, interaction: Interaction):
+        await interaction.response.send_message(
+            f"Pong! In {round(self.client.latency * 1000)}ms"
+        )
 
     @app_commands.command()
     async def membros(self, interaction: Interaction):
@@ -97,57 +99,49 @@ class BasicComands(Cog, name="Comandos Básicos"):
 
         choices_list = []
         frase = ""
-        for c in choices:
-            if c != " ":
-                frase += c
+        for c in choices.split():
+            if c != "ou":
+                frase += f"{c} "
             else:
-                choices_list.append(frase)
+                choices_list.append(frase.strip())
                 frase = ""
         choices_list.append(frase)
-        choices_list = [c for c in choices_list if c != "ou"]
 
         result = f"Eu escolho acho que\n"
         result += f"**{random.choice(choices_list)}**"
         await interaction.response.send_message(result)
 
-    @commands.command()
-    async def repita(self, ctx: Context, times, *content: str):
-        """Repete uma mensagem várias vezes, max 10 vezes
-        uso: repita <nro de vezes> <mensagem>
-        Argumentos:
-            - nro de vezes: Total de vezes que a mensagem será repetida
-            - mensagem: a mensagem a ser repetida
-        """
+    # @app_commands.command()
+    # async def repita(self, interaction: Interaction, times: int, content: str):
+    #     """Repete uma mensagem várias vezes, max 10 vezes
+    #     uso: repita <nro de vezes> <mensagem>
+    #     Argumentos:
+    #         - nro de vezes: Total de vezes que a mensagem será repetida
+    #         - mensagem: a mensagem a ser repetida
+    #     """
 
-        try:
-            times = int(times)
-            if times > 10:
-                times = 10
-        except Exception:
-            response = "nro vezes inválido :dizzy_face:\nO número de vezes deve ser um valor inteiro maior que 0\n\n EX:`repita 2 quero caféééé`"
-            await ctx.send(response)
-            return
+    #     try:
+    #         times = int(times)
+    #         if times > 10:
+    #             times = 10
+    #     except Exception:
+    #         response = "nro vezes inválido :dizzy_face:\nO número de vezes deve ser um valor inteiro maior que 0\n\n EX:`repita 2 quero caféééé`"
+    #         await interaction.response.send_message(response)
 
-        if times is None or times < 1:
-            response = "Não dá pra repetir 0 ou menos vezes! :rage:\nBote um valor pra eu repetir\n\n EX:`repita 2 quero caféééé`"
-            await ctx.send(response)
-            return
+    #     if times is None or times < 1:
+    #         response = "Não dá pra repetir 0 ou menos vezes! :rage:\nBote um valor pra eu repetir\n\n EX:`repita 2 quero caféééé`"
+    #         await interaction.response.send_message(response)
 
-        if not content:
-            response = "Não sei o que é para repetir! :face_with_raised_eyebrow:\nDiga o que é pra repetir\n\n EX:`repita 2 quero caféééé`"
-            await ctx.send(response)
-            return
+    #     if not content:
+    #         response = "Não sei o que é para repetir! :face_with_raised_eyebrow:\nDiga o que é pra repetir\n\n EX:`repita 2 quero caféééé`"
+    #         await interaction.response.send_message(response)
 
-        frase = ""
-        for c in content:
-            frase += f"{c} "
+    #     for i in range(times):
+    #         await interaction.response.send_message(frase)
+    #     await interaction.response.send_message(f"Disse: <@{ctx.message.author.id}>")
 
-        for i in range(times):
-            await ctx.send(frase)
-        await ctx.send(f"Disse: <@{ctx.message.author.id}>")
-
-    @commands.command()
-    async def dado(self, ctx: Context, dice: str = None):
+    @app_commands.command()
+    async def dado(self, interaction: Interaction, dice: str = None):
         """Joga um dado dY, x vezes
 
         uso: dado <x>d<Y>
@@ -169,8 +163,8 @@ class BasicComands(Cog, name="Comandos Básicos"):
             result = f"{result} 1d6 :game_die:\n"
 
         for i in range(rolls):
-            result += f"Lançamento {i}: **{str(random.randint(1, size))}**.\n"
-        await ctx.send(result)
+            result += f"Lançamento {i+1}: **{str(random.randint(1, size))}**.\n"
+        await interaction.response.send_message(result)
 
 
 async def setup(bot: Bot):

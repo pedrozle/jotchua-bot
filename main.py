@@ -16,9 +16,11 @@ BOT_TOKEN = os.getenv("BOT_TOKEN_DEV") if DEBUG else os.getenv("BOT_TOKEN")
 class MyClient(commands.Bot):
     async def on_ready(self):
         try:
-            synced  = await self.tree.sync()
+            synced = await self.tree.sync()
             print(f"Synced {len(synced)} command(s)")
-        except  Exception as e:
+            for command in synced:
+                print(f"Command: {command}")
+        except Exception as e:
             print(e)
             exit()
         print("------")
@@ -27,11 +29,10 @@ class MyClient(commands.Bot):
         for guild in self.guilds:
             print(f"--- {guild.name} ---")
             for member in guild.members:
-
                 print(member)
             print(f"--- end ---\n\n")
         print("--- Ready ---")
-    
+
     async def setup_hook(self):
         for extension in cogs:
             await self.load_extension(extension)
@@ -44,7 +45,6 @@ class MyClient(commands.Bot):
             break
 
     async def on_message(self, message: Message):
-        print(f"Message from {message.author}: {message.content}")
         await self.process_commands(message)
 
 intents = discord.Intents.default()
