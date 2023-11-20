@@ -21,7 +21,7 @@ class BasicComands(Cog, name="Comandos Básicos"):
         await interaction.response.send_message("Hello World")
 
     @app_commands.command()
-    async def membros1(self, interaction: Interaction):
+    async def membros(self, interaction: Interaction):
         """Exibe uma listagem dos membros deste servidor."""
 
         string_member = ""
@@ -79,8 +79,8 @@ class BasicComands(Cog, name="Comandos Básicos"):
             )
         )
 
-    @commands.command()
-    async def decida(self, ctx: Context, *choices: str):
+    @app_commands.command()
+    async def decida(self, interaction: Interaction, choices: str):
         """Pede ao cão para decidir entre várias opções
 
         uso: decida <arg1> ou <arg2> ou ... ou <argN>
@@ -90,21 +90,25 @@ class BasicComands(Cog, name="Comandos Básicos"):
         """
 
         if not choices:
-            await ctx.send("Temq colocar algo ne")
+            await interaction.response.send_message(
+                "Que?!? :confused:\nNão dá pra decidir entre nada e nada, temq colocar algo ne"
+            )
             return
 
         choices_list = []
         frase = ""
         for c in choices:
-            if c != "ou":
-                frase += f"{c} "
+            if c != " ":
+                frase += c
             else:
                 choices_list.append(frase)
                 frase = ""
-
         choices_list.append(frase)
-        result = f"Eu escolho acho que\n**{random.choice(choices_list)}** "
-        await ctx.send(result)
+        choices_list = [c for c in choices_list if c != "ou"]
+
+        result = f"Eu escolho acho que\n"
+        result += f"**{random.choice(choices_list)}**"
+        await interaction.response.send_message(result)
 
     @commands.command()
     async def repita(self, ctx: Context, times, *content: str):
