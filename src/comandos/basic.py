@@ -2,7 +2,6 @@ from discord import Member
 from discord.ext import commands
 from discord import app_commands, Interaction
 from discord.ext.commands import Bot, Cog
-from discord.ext.commands import Context
 from src.methods import embed_msg
 from datetime import datetime
 import random

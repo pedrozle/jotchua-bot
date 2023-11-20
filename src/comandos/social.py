@@ -1,7 +1,7 @@
 from discord import Member
 from discord.ext import commands
+from discord import app_commands, Interaction
 from discord.ext.commands import Bot, Cog
-from discord.ext.commands import Context
 from src.methods import embed_msg
 from datetime import datetime
 import random
@@ -16,26 +16,21 @@ class SocialComands(Cog, name="Social"):
     async def on_ready(self) -> None:
         pass
 
-    @commands.command()
-    async def abracar(self, ctx: Context, user: Member = None):
+    @app_commands.command()
+    async def abracar(self, interaction: Interaction, user: Member = None):
         """Você abraça o usuário. Que Fofo <3."""
 
         if not user:
             response = "Ei!!!! :angry: \nNão dá pra abraçar fanstasma :ghost: ! Você precisa informar o usuário.\n\n `ex: abracar fulano`"
-            await ctx.send(response)
+            await interaction.response.send_message(response)
             return
 
-        _guild_id = ctx.guild.id
-        title_header = ""
-        icon_header: any
+        _guild = interaction.guild
+        title_header = _guild.name
+        icon_header = _guild.icon
         title_content = ""
         desc_content = ""
         footer = ""
-
-        for guild in self.client.guilds:
-            if guild.id == _guild_id:
-                title_header = guild.name
-                icon_header = guild.icon
 
         frases = [
             "acaba de dar um abraço em",
@@ -45,9 +40,7 @@ class SocialComands(Cog, name="Social"):
 
         title_content = "Temporada de Abraços!"
 
-        desc_content = (
-            f"<@{ctx.message.author.id}> {random.choice(frases)} <@{user.id}>"
-        )
+        desc_content = f"<@{interaction.user.id}> {random.choice(frases)} <@{user.id}>"
         footer = f"Abraçou em {datetime.now().strftime('%d-%m-%Y')}"
 
         req = requests.get("https://api.waifu.pics/sfw/hug")
@@ -57,7 +50,6 @@ class SocialComands(Cog, name="Social"):
             img_url = req.json()["url"]
 
         embed = embed_msg(
-            ctx,
             icon_header=icon_header,
             title_header=title_header,
             title_content=title_content,
@@ -67,35 +59,23 @@ class SocialComands(Cog, name="Social"):
 
         embed.set_image(url=img_url)
 
-        await ctx.send(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
-    @abracar.error
-    async def info_error(self, ctx: Context, error):
-        if isinstance(error, commands.BadArgument):
-            await ctx.send(
-                "AHA! :face_with_monocle:\nEsse caba não está no servidor!!!!! :angry:"
-            )
-
-    @commands.command()
-    async def tapa(self, ctx: Context, user: Member = None):
+    @app_commands.command()
+    async def tapa(self, interaction: Interaction, user: Member = None):
         """Você dá um tapa no usuário. Chama pra porrada."""
 
         if not user:
             response = "Ei!!!! :angry: \nPra quê bater no fantasma :ghost:, cara!? Você precisa informar o usuário.\n\n `ex: tapa fulano`"
-            await ctx.send(response)
+            await interaction.response.send_message(response)
             return
 
-        _guild_id = ctx.guild.id
-        title_header = ""
-        icon_header: any
+        _guild = interaction.guild
+        title_header = _guild.name
+        icon_header = _guild.icon
         title_content = ""
         desc_content = ""
         footer = ""
-
-        for guild in self.client.guilds:
-            if guild.id == _guild_id:
-                title_header = guild.name
-                icon_header = guild.icon
 
         frases = [
             "estapeou com vontade",
@@ -105,20 +85,16 @@ class SocialComands(Cog, name="Social"):
 
         title_content = "CAI NA PORRADA!"
 
-        desc_content = (
-            f"<@{ctx.message.author.id}> {random.choice(frases)} <@{user.id}>"
-        )
+        desc_content = f"<@{interaction.user.id}> {random.choice(frases)} <@{user.id}>"
         footer = f"Porrada em {datetime.now().strftime('%d-%m-%Y')}"
 
         req = requests.get("https://api.waifu.pics/sfw/slap")
         img_url = ""
 
-
         if req.status_code == 200:
             img_url = req.json()["url"]
 
         embed = embed_msg(
-            ctx,
             icon_header=icon_header,
             title_header=title_header,
             title_content=title_content,
@@ -128,14 +104,7 @@ class SocialComands(Cog, name="Social"):
 
         embed.set_image(url=img_url)
 
-        await ctx.send(embed=embed)
-
-    @tapa.error
-    async def info_error(self, ctx: Context, error):
-        if isinstance(error, commands.BadArgument):
-            await ctx.send(
-                "AHA! :face_with_monocle:\nEsse caba não está no servidor!!!!! :angry:"
-            )
+        await interaction.response.send_message(embed=embed)
 
 
 async def setup(bot: Bot):
