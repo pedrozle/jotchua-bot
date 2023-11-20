@@ -17,7 +17,7 @@
             <nav>
                 <a class="logo" href="">Jotchua Bot</a>
                 <a class="logo-mobile" href="">
-                    <img src="assets/jot.svg" alt="">
+                    <img src="assets/jot.svg" alt="" />
                 </a>
                 <div class="links">
                     <a class="link" href="#comandos">Comandos</a>
@@ -47,7 +47,7 @@
             <section id="comandos" class="comandos">
                 <div class="content">
                     <div class="jotchua-hero">
-                        <img src="assets/jot.svg" alt="" />
+                        <img src="assets/jotchua.jpg" alt="" />
                         <p class="divider"></p>
                         <p class="title">Comandos Jotchua</p>
                     </div>
@@ -79,7 +79,8 @@
             <section class="comandos-lista">
                 <p class="title">Lista de Comandos</p>
                 <p class="subtitle">
-                    Todos os comandos devem começar com 'j!' ou 'jot!'
+                    Jotchua é um aplicativo, isso significa que os comandos
+                    começam com uma barra <span>/</span>
                 </p>
 
                 <div class="comandos-container">
@@ -92,7 +93,7 @@
                                 Comandos Básicos
                             </span>
                             <span class="categoria-amount mantis-darker">
-                                5
+                                4
                             </span>
                         </div>
                         <div
@@ -119,7 +120,10 @@
                         </div>
                     </div>
                     <div class="detalhes" id="detalhes-container">
-                        <div id="comandos-basicos" class="comandos-basicos exibe">
+                        <div
+                            id="comandos-basicos"
+                            class="comandos-basicos exibe"
+                        >
                             <div class="detalhe-container">
                                 <p class="detalhe-title mantis">
                                     Exibir lista dos membros
@@ -133,7 +137,7 @@
                                     </p>
                                 </div>
                                 <p class="detalhe-exemplo">
-                                    <span>&gt; usuario: j!membros</span><br />
+                                    <span>&gt; usuario: /membros</span><br />
                                     <span
                                         >&gt; Jotchua: Membros deste
                                         servidor:</span
@@ -150,7 +154,7 @@
                                 <div class="detalhe-content">
                                     <span class="code">info</span>
                                     <span class="code-args"
-                                        >usuario | vazio</span
+                                        >usuario | nada</span
                                     >
                                     <p class="descricao">
                                         Jotchua exibe informações sobre um
@@ -159,7 +163,7 @@
                                     </p>
                                 </div>
                                 <p class="detalhe-exemplo">
-                                    <span>&gt; usuario: j!info</span><br />
+                                    <span>&gt; usuario: /info</span><br />
                                     <span
                                         >&gt; Jotchua: Informações sobre
                                         Usuario</span
@@ -180,7 +184,7 @@
                                     </p>
                                 </div>
                                 <p class="detalhe-exemplo">
-                                    <span>&gt; usuario: j!dado 1d20</span><br />
+                                    <span>&gt; usuario: /dado 1d20</span><br />
                                     <span
                                         >&gt; Jotchua: Eu lancei um dado 1d20
                                         🎲<br />Lançamento 1: 10</span
@@ -203,8 +207,8 @@
                                 </div>
                                 <p class="detalhe-exemplo">
                                     <span
-                                        >&gt; usuario: j!decida melancia ou
-                                        manga ou cupuaçu</span
+                                        >&gt; usuario: /decida melancia ou manga
+                                        ou cupuaçu</span
                                     ><br />
                                     <span
                                         >&gt; Jotchua: Eu escolho acho que</span
@@ -212,41 +216,8 @@
                                     <span>&gt; Jotchua: melancia</span>
                                 </p>
                             </div>
-                            <div class="detalhe-container">
-                                <p class="detalhe-title mantis">
-                                    Repetir uma mensagem
-                                </p>
-                                <div class="detalhe-content">
-                                    <span class="code">repita</span>
-                                    <span class="code-args">x mensagem</span>
-                                    <p class="descricao">
-                                        Jotchua repete x vezes a mensagem
-                                        enviada, depois informa quem foi que
-                                        pediu pra ele repetir.
-                                    </p>
-                                </div>
-                                <p class="detalhe-exemplo">
-                                    <span
-                                        >&gt; usuario: j!repita 5 quero
-                                        caféeee</span
-                                    ><br />
-                                    <span>&gt; Jotchua: quero caféee</span
-                                    ><br />
-                                    <span>&gt; Jotchua: quero caféee</span
-                                    ><br />
-                                    <span>&gt; Jotchua: quero caféee</span
-                                    ><br />
-                                    <span>&gt; Jotchua: quero caféee</span
-                                    ><br />
-                                    <span>&gt; Jotchua: quero caféee</span
-                                    ><br />
-                                    <span>&gt; Jotchua: disse @usuario</span>
-                                </p>
-                            </div>
                         </div>
-                        <div id="role-play" class="role-play">
-                            soon!
-                        </div>
+                        <div id="role-play" class="role-play">soon!</div>
                         <div id="social" class="social">
                             <div class="detalhe-container">
                                 <p class="detalhe-title azure">
@@ -261,7 +232,7 @@
                                     </p>
                                 </div>
                                 <p class="detalhe-exemplo">
-                                    <span>&gt; usuario: j!abracar ciclano</span
+                                    <span>&gt; usuario: /abracar ciclano</span
                                     ><br />
                                     <span
                                         >&gt; Jotchua: Temporada de abraços<br />
@@ -277,11 +248,12 @@
                                     <span class="code">tapa</span>
                                     <span class="code-args">usuario</span>
                                     <p class="descricao">
-                                        Você não se conteve e sentou a porrada no usuario informado.
+                                        Você não se conteve e sentou a porrada
+                                        no usuario informado.
                                     </p>
                                 </div>
                                 <p class="detalhe-exemplo">
-                                    <span>&gt; usuário: j!tapa ciclano</span
+                                    <span>&gt; usuário: /tapa ciclano</span
                                     ><br />
                                     <span
                                         >&gt; Jotchua: CHAMA PRA PORRADA<br />

@@ -98,6 +98,15 @@ body {
     font-size: 1.5em;
     color: var(--cinza);
 }
+
+.subtitle {
+    & span {
+        background-color: #cecece;
+        padding: 1px 14px;
+        border-radius: 10px;
+    }
+}
+
 /* ############### HEADER ################## */
 
 header {
@@ -478,24 +487,23 @@ footer {
         justify-self: center;
     }
 
-    .comandos-class{
+    .comandos-class {
         width: 90vw;
     }
 
-    .class{
+    .class {
         width: 100%;
     }
 
-    .title{
+    .title {
         font-size: 1.7em;
     }
 
-    .subtitle{
+    .subtitle {
         font-size: 1.2em;
     }
 
-    .comandos-container{
+    .comandos-container {
         width: 90vw;
     }
-
 }
