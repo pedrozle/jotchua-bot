@@ -8,14 +8,14 @@ Feio e Fofo!
 
 ### Preparação
 
-Este projeto utiliza como base a biblioteca [Discord](https://discord.com) como base para o servidor. Utiliza também as bibliotecas [Pymongo](https://google.com) para abrir conexões com o banco de dados.
+Este projeto utiliza como base a biblioteca [Discord](https://discord.com) como base para o servidor. Utiliza também as bibliotecas [Pymongo](https://pypi.org/project/pymongo/) para abrir conexões com o banco de dados.
 
 #### Documentação
 
 É possível encontrar a documentação a seguir:
 
--   [Documentação](https://github.com/) do DiscordPy
--   [Documentação](https://github.com/) do Pymongo
+-   [Documentação](https://discordpy.readthedocs.io/en/stable/) do DiscordPy
+-   [Documentação](https://pymongo.readthedocs.io/en/stable/) do Pymongo
 
 ## Instalação
 
@@ -35,7 +35,7 @@ py main.py
 
 # Documentação
 
-A documentação do Jotchua-Bot poderá ser encontrada [neste link](https://github.com), mas abaixo é possível conhecer os comando básicos:
+A documentação do Jotchua-Bot poderá ser encontrada [neste link](https://pedrozle.github.io/jotchua-bot/), mas abaixo é possível conhecer os comando básicos:
 
 > [!NOTE]  
 > Todos os comandos devem iniciar com `j!` ou `jot!` 😊
@@ -45,6 +45,5 @@ A documentação do Jotchua-Bot poderá ser encontrada [neste link](https://gith
 | Ação                        | Comando                                 | Resultado                                                                                                     |
 | --------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | Listar membros              | `membros`                               | Exibe uma lista de todos os membros neste servidor                                                            |
-| Informação sobre um usuário | `info <nada ou apelido >`               | Exibe informações sobre você (caso não envie nenhum apelido) ou sobre um usuário com aquele (apelido/nome/id) |
-| Repetir                     | `repetir <nro de vezes> <mensagem>`     | Repete <nro de vezes> vezes a <mensagem> e informa quem disse                                                 |
+| Informação sobre um usuário | `info <nada ou apelido >`               | Exibe informações sobre você (caso não envie nenhum apelido) ou sobre um usuário com aquele (apelido/nome/id) |                                               |
 | Jotchua Decide              | `decida arg_1 ou arg_2 ou ... ou arg_n` | Escolhe para você um dos dois argumentos que foram passados para ele (pode passar mais de 2 argumentos)       |
