@@ -1,19 +1,11 @@
-var listaDeTextos = [
-    "animar",
-    "bagunçar",
-    "moderar",
-    "divertir",
-    "agitar",
-    "colorir",
-    "impulsionar",
-];
+import * as dados from "./dados.js";
 var indice = 0;
 
 // Função para atualizar o texto do parágrafo
 function atualizarTexto() {
     var paragrafo = document.getElementById("changeText");
-    paragrafo.innerHTML = listaDeTextos[indice];
-    indice = (indice + 1) % listaDeTextos.length;
+    paragrafo.innerHTML = dados.listaDeTextos[indice];
+    indice = (indice + 1) % dados.listaDeTextos.length;
 }
 
 // Chama a função inicialmente
@@ -47,3 +39,4 @@ function exibeDetalhes(categoria) {
 
     conteudo.classList.add("exibe");
 }
+
