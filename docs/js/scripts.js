@@ -1,4 +1,5 @@
-var listaDeTextos = [
+var indice = 0;
+const listaDeTextos = [
     "animar",
     "bagunçar",
     "moderar",
@@ -7,8 +8,6 @@ var listaDeTextos = [
     "colorir",
     "impulsionar",
 ];
-var indice = 0;
-
 // Função para atualizar o texto do parágrafo
 function atualizarTexto() {
     var paragrafo = document.getElementById("changeText");

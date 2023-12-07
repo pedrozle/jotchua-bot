@@ -454,12 +454,38 @@ nav .links .link {
 /* ############### FOOTER ################## */
 
 footer {
-    padding: 20px;
+    padding: 40px 20px;
     background-color: var(--grafite);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.footer-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 60px;
+}
+
+.footer-title {
+    & p {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+}
+
+.footer-contato {
+    & p {
+        font-weight: bold;
+        margin-bottom: 10px;
+    };
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+    
 }
 
 @media only screen and (max-width: 768px) {
