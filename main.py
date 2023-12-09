@@ -1,6 +1,7 @@
 import os
 import discord
 from discord import app_commands
+from config import get_settings
 from discord.ext import commands
 from discord.ext.commands.context import Context
 from discord import Message, Guild
@@ -9,9 +10,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DEBUG = os.getenv("DEBUG")
+DEBUG = get_settings().DEBUG
 
-BOT_TOKEN = os.getenv("BOT_TOKEN_DEV") if DEBUG else os.getenv("BOT_TOKEN")
+BOT_TOKEN = get_settings().BOT_TOKEN
 
 class MyClient(commands.Bot):
     async def on_ready(self):
