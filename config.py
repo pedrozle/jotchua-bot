@@ -13,7 +13,7 @@ class Settings:
 
     # Bot configurations
     DEBUG: bool = bool(os.getenv("DEBUG", "False"))
-    BOT_TOKEN: os.getenv("BOT_TOKEN_DEV") if DEBUG else os.getenv("BOT_TOKEN")
+    BOT_TOKEN: str = os.getenv("BOT_TOKEN_DEV") if DEBUG else os.getenv("BOT_TOKEN")
 
 def get_settings():
     return Settings()
