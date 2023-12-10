@@ -75,4 +75,5 @@ command_prefix = ["jot!", "j!"]
 cogs = ["src.comandos.basic", "src.comandos.social", "src.comandos.rp"]
 
 client = MyClient(intents=intents, command_prefix=command_prefix)
+print(BOT_TOKEN)
 client.run(BOT_TOKEN)
