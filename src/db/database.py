@@ -24,3 +24,5 @@ class DB:
         
     def get_collection(self, collection_name: str):
         return self.client["jotchua_bot"][collection_name]
+
+db_instance = DB()

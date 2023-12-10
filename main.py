@@ -5,13 +5,15 @@ from config import get_settings
 from discord.ext import commands
 from discord.ext.commands.context import Context
 from discord import Message, Guild
+from src.models.user_model import UserModel
+
+from src.db.database import db_instance
 
 from dotenv import load_dotenv
 
 load_dotenv()
 
 DEBUG = get_settings().DEBUG
-
 BOT_TOKEN = get_settings().BOT_TOKEN
 
 class MyClient(commands.Bot):
@@ -28,8 +30,13 @@ class MyClient(commands.Bot):
         print(f"Logged in as {self.user} (ID: {self.user.id})")
         print("------")
         for guild in self.guilds:
+            collection = db_instance.get_collection(str(guild.id))
             print(f"--- {guild.name} ---")
             for member in guild.members:
+                find = collection.find_one({"id": str(member.id)})
+                if find is None and not member.bot:
+                    user = UserModel(member.name, str(member.id))
+                    collection.insert_one(user.__dict__)
                 print(member)
             print(f"--- end ---\n\n")
         print("--- Ready ---")
@@ -46,6 +53,18 @@ class MyClient(commands.Bot):
             break
 
     async def on_message(self, message: Message):
+        author = message.author
+        if not author.bot:
+            collection = db_instance.get_collection(str(message.guild.id))
+            user = collection.find_one({"id": str(author.id)})
+            if user is None:
+                user = UserModel(author.name, str(author.id))
+                collection.insert_one(user.__dict__)
+            else:
+                del user["_id"]
+                user = UserModel(**user)
+                user.add_xp(5)
+                collection.update_one({"id": str(author.id)}, {"$set": user.__dict__})
         await self.process_commands(message)
 
 intents = discord.Intents.default()
@@ -53,7 +72,7 @@ intents.members = True
 intents.message_content = True
 command_prefix = ["jot!", "j!"]
 
-cogs = ["src.comandos.basic", "src.comandos.social"]
+cogs = ["src.comandos.basic", "src.comandos.social", "src.comandos.rp"]
 
 client = MyClient(intents=intents, command_prefix=command_prefix)
 client.run(BOT_TOKEN)
