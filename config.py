@@ -12,7 +12,7 @@ class Settings:
     DB_SERVER = os.getenv("DB_SERVER", "")
 
     # Bot configurations
-    DEBUG = bool(os.getenv("DEBUG", "False"))
+    DEBUG = bool(os.getenv("DEBUG", "False") == "True")
     print("Serving in: " + ("DEBUG" if DEBUG else "PRODUCTION") + " mode")
     BOT_TOKEN = os.getenv("BOT_TOKEN_DEV") if DEBUG else os.getenv("BOT_TOKEN")
 
