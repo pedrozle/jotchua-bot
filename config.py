@@ -13,6 +13,7 @@ class Settings:
 
     # Bot configurations
     DEBUG = bool(os.getenv("DEBUG", "False"))
+    print("Serving in: " + ("DEBUG" if DEBUG else "PRODUCTION") + " mode")
     BOT_TOKEN = os.getenv("BOT_TOKEN_DEV") if DEBUG else os.getenv("BOT_TOKEN")
 
 def get_settings():
