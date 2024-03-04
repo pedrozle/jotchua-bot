@@ -19,12 +19,19 @@ Este projeto utiliza como base a biblioteca [Discord](https://discord.com) como 
 
 ## Instalação
 
-> Para executar este projeto, verifique os requisitos de instalação presentes no arquivo `requirements.txt` se desejar optar por uma instalação limpa, instale e inicie um ambiente de desenvolvimento venv, conda, etc.
+> [!IMPORTANT]
+> Para executar este projeto, verifique os requisitos de instalação presentes no arquivo `Pipfile`. Este projeto utiliza a instalação a partir do [Pipenv](https://github.com/pypa/pipenv?tab=readme-ov-file#installation).
 
-Para executar a instalação dos pacotes necessários para o funcionamento do sistema, execute o código
+Para executar a instalação dos pacotes necessários para o funcionamento do sistema, primeiro verifique se o `pipenv` está instalado.
 
 ```
-pip install -r requirements.txt
+pipenv --version
+```
+
+Caso esteja instalado em sua máquina poderá prosseguir com a instalação das dependências
+
+```
+pipenv install
 ```
 
 após executar a instalação, execute o código abaixo para iniciar o servidor
