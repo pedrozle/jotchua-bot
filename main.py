@@ -9,10 +9,6 @@ from src.models.user_model import UserModel
 
 from src.db.database import db_instance
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
 DEBUG = get_settings().DEBUG
 BOT_TOKEN = get_settings().BOT_TOKEN
 
