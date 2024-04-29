@@ -1,8 +1,6 @@
 from pymongo import MongoClient
 from config import get_settings
-from pymongo import MongoClient
 from pymongo.errors import AutoReconnect
-from config import get_settings
 
 DB_USER = get_settings().DB_USER
 DB_PASS = get_settings().DB_PASS

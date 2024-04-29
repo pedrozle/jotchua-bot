@@ -1,16 +1,13 @@
-import os
 import discord
-from discord import app_commands
 from config import get_settings
 from discord.ext import commands
-from discord.ext.commands.context import Context
 from discord import Message, Guild
 from src.models.user_model import UserModel
 
 from src.db.database import db_instance
 
-DEBUG = get_settings().DEBUG
 BOT_TOKEN = get_settings().BOT_TOKEN
+
 
 class MyClient(commands.Bot):
     async def on_ready(self):
@@ -28,12 +25,14 @@ class MyClient(commands.Bot):
         for guild in self.guilds:
             collection = db_instance.get_collection(str(guild.id))
             print(f"--- {guild.name} ---")
+            totalMembers = 0
             for member in guild.members:
                 find = collection.find_one({"id": str(member.id)})
                 if find is None and not member.bot:
                     user = UserModel(member.name, str(member.id))
                     collection.insert_one(user.__dict__)
-                print(member)
+                totalMembers += 1
+            print(totalMembers)
             print(f"--- end ---\n\n")
         print("--- Ready ---")
 
@@ -62,6 +61,7 @@ class MyClient(commands.Bot):
                 user.add_xp(5)
                 collection.update_one({"id": str(author.id)}, {"$set": user.__dict__})
         await self.process_commands(message)
+
 
 intents = discord.Intents.default()
 intents.members = True
