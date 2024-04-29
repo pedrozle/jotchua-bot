@@ -32,7 +32,7 @@ class MyClient(commands.Bot):
                     user = UserModel(member.name, str(member.id))
                     collection.insert_one(user.__dict__)
                 totalMembers += 1
-            print(totalMembers)
+            print(f"{totalMembers} membros")
             print(f"--- end ---\n\n")
         print("--- Ready ---")
 

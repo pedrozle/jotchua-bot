@@ -164,6 +164,48 @@ class BasicComands(Cog, name="Comandos Básicos"):
         for i in range(rolls):
             result += f"Lançamento {i+1}: **{str(random.randint(1, size))}**.\n"
         await interaction.response.send_message(result)
+    
+    @app_commands.command()
+    async def avl(self, interaction: Interaction):
+        await interaction.response.send_message(
+                        """```c
+
+            // TAD AVL e ED para implementação
+
+            // Tipo de dado
+            typedef struct{
+                int chave;
+            }tipo_elem;
+
+            //Estrutura de dados
+            typedef struct no{
+                int fb; // fator de balanceamento
+                tipo_elem info; 
+                struct no *esq, *dir; // filhos da direita e da esquerda
+            }No;
+
+            typedef struct{
+                No *raiz;
+            }Arvore;
+
+            //Operações principais feitas com o TAD, que serão chamadas no programa principal 
+            void Criar(Arvore *T); // Cria uma árvore vazia
+            int Vazia(Arvore *T);  // verifica se a árvore está vazia
+            void Destruir(Arvore *T); // destrói a árvore
+            int Inserir(Arvore *T, tipo_elem v); // Insere o elemento v na árvore
+            int Remover(Arvore *T, int chave); // remove o elemento de chave "chave" da árvore, se existir
+            void Exibir_pre_ordem(Arvore *T);
+            void Exibir_in_ordem(Arvore *T);
+            void Exibir_pos_ordem(Arvore *T);
+
+            // Inserir aqui o protótipo das funções auxiliares que não serão chamadas no programa principal
+            int Inserir_rec(No **t, tipo_elem *v, int *flag);
+            int Remover_rec(No **t, int *chave, int *flag);
+            void Exibir_pre_ordem_rec(Arvore *T);
+            void Exibir_in_ordem_rec(Arvore *T);
+            void Exibir_pos_ordem_rec(Arvore *T); 
+            ```"""
+        )
 
 
 async def setup(bot: Bot):
