@@ -164,8 +164,8 @@ class BasicComands(Cog, name="Comandos Básicos"):
         for i in range(rolls):
             result += f"Lançamento {i+1}: **{str(random.randint(1, size))}**.\n"
         await interaction.response.send_message(result)
-
-
+ 
+ 
 async def setup(bot: Bot):
     # Every extension should have this function
     await bot.add_cog(BasicComands(bot))

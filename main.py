@@ -32,7 +32,7 @@ class MyClient(commands.Bot):
                     user = UserModel(member.name, str(member.id))
                     collection.insert_one(user.__dict__)
                 totalMembers += 1
-            print(totalMembers)
+            print(f"{totalMembers} membros")
             print(f"--- end ---\n\n")
         print("--- Ready ---")
 
@@ -68,7 +68,7 @@ intents.members = True
 intents.message_content = True
 command_prefix = ["jot!", "j!"]
 
-cogs = ["src.comandos.basic", "src.comandos.social", "src.comandos.rp"]
+cogs = ["src.comandos.basic", "src.comandos.social", "src.comandos.rp","src.comandos.programming"]
 
 client = MyClient(intents=intents, command_prefix=command_prefix)
 client.run(BOT_TOKEN)

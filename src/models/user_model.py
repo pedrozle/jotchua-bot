@@ -1,12 +1,12 @@
 class UserModel:
 
-    def __init__(self, username: str, id: str, level: int = 0, xp: int = 0, money: int = 0):
+    def __init__(self, username: str, id: str, level: int = 0, xp: int = 0, money: int = 0,xp_limit: int = 100):
         self.username = username
         self.id = id
         self.level = level
         self.xp = xp
         self.money = money
-        self.xp_limit = 100
+        self.xp_limit = xp_limit
         
     def add_xp(self, points):
         self.xp += points
