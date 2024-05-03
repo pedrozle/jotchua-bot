@@ -68,7 +68,7 @@ intents.members = True
 intents.message_content = True
 command_prefix = ["jot!", "j!"]
 
-cogs = ["src.comandos.basic", "src.comandos.social", "src.comandos.rp"]
+cogs = ["src.comandos.basic", "src.comandos.social", "src.comandos.rp","src.comandos.programming"]
 
 client = MyClient(intents=intents, command_prefix=command_prefix)
 client.run(BOT_TOKEN)
